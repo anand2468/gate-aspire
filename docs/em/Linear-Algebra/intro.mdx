@@ -1,0 +1,83 @@
+---
+title: Introduction to Matrices
+---
+
+## Matrix
+A **matrix** (plural: **matrices**) is a rectangular arrangement of numbers, symbols, or expressions organized into **rows** and **columns**.
+
+For example,
+$$
+
+A=
+\begin{bmatrix}
+1 & 2 & 3 \\
+4 & 5 & 6
+\end{bmatrix}
+
+$$
+* It has **2 rows**.
+* It has **3 columns**.
+* So it is called a **$$2 \times 3$$ matrix** $$rows × columns$$.
+
+### General form
+
+A matrix with $$m$$ rows and $$n$$ columns is written as
+$$
+
+A=
+\begin{bmatrix}
+a_{11} & a_{12} & \cdots & a_{1n}\\
+a_{21} & a_{22} & \cdots & a_{2n}\\
+\vdots & \vdots & \ddots & \vdots\\
+a_{m1} & a_{m2} & \cdots & a_{mn}
+\end{bmatrix}
+
+$$
+where:
+
+* $$m$$ = number of rows
+* $$n$$ = number of columns
+* $$ a_{ij} $$ is the element in the **$i$-th row** and **$$j$$-th column**.
+
+### Example
+
+Consider
+
+$$
+
+B=
+\begin{bmatrix}
+7 & 8\\
+9 & 10\\
+11 & 12
+\end{bmatrix}
+
+$$
+* Order: $$3 \times 2$$
+* $$ b_{11} $$=7
+* $$ b_{23}=,$$does not exist (there are only 2 columns)
+* $$ b_{32}=12 $$
+
+### Why are matrices useful?
+
+Matrices are used to:
+
+* Solve systems of linear equations.
+* Represent and transform geometric objects (e.g., rotate, scale, translate points in computer graphics).
+* Organize and analyze data.
+* Represent networks and graphs.
+* Perform computations in machine learning and artificial intelligence.
+
+### Common types of matrices
+
+| Type            | Example                                 |
+| --------------- | --------------------------------------- |
+| Row matrix      | $$\begin{bmatrix}1 & 2 & 3\end{bmatrix} $$|
+| Column matrix   | $$\begin{bmatrix}1\\2\\3\end{bmatrix} $$    |
+| Square matrix   | $$\begin{bmatrix}1&2\\3&4\end{bmatrix}$$   |
+| Zero matrix     | $$\begin{bmatrix}0&0\\0&0\end{bmatrix}$$   |
+| Identity matrix |$$\begin{bmatrix}1&0\\0&1\end{bmatrix} $$  |
+| Diagonal matrix | $$\begin{bmatrix}2&0\\0&5\end{bmatrix}$$   |
+
+
+In simple terms, **a matrix is like a table of values**. Just as a spreadsheet stores data in rows and columns, a matrix stores numbers in rows and columns, but with mathematical rules that allow you to perform operations such as addition, multiplication, finding inverses, and solving equations.

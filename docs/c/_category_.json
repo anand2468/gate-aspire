@@ -1,0 +1,9 @@
+{
+  "label": "C Programming",
+  "position": 4,
+  "link": {
+    "slug": "/c",
+    "type": "generated-index",
+    "description": "To learn the most important C Programming concepts."
+  }
+}

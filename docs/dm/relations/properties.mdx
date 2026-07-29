@@ -1,0 +1,668 @@
+---
+title: Properties of Relations
+description: Learn the properties of relations in Discrete Mathematics including reflexive, irreflexive, symmetric, asymmetric, antisymmetric, and transitive relations with definitions, examples, proofs, and GATE CSE practice notes.
+sidebar_position: 2
+keywords:
+  - GATE CSE
+  - Discrete Mathematics
+  - Relations
+  - Properties of Relations
+  - Reflexive Relation
+  - Irreflexive Relation
+  - Symmetric Relation
+  - Asymmetric Relation
+  - Antisymmetric Relation
+  - Transitive Relation
+---
+
+## Properties of Relations
+
+In Discrete Mathematics, a **relation** is a subset of the Cartesian product of two sets.
+
+Suppose
+
+$$
+R \subseteq A \times A
+$$
+
+Different relations exhibit different **properties** depending on how their ordered pairs are related to one another.
+
+Understanding these properties is one of the most important topics in **GATE CSE**, as many questions ask you to identify whether a relation satisfies one or more of these properties.
+
+
+
+## 1. Reflexive Relation
+
+### Definition
+
+A relation $R$ on a set $A$ is called **reflexive** if **every element is related to itself**.
+
+Mathematically,
+
+$$
+\forall a \in A,\ (a,a)\in R
+$$
+
+In simple words,
+
+> Every element must have a self-loop.
+
+
+
+### Example 1
+
+Let
+
+$$
+A=\{1,2,3\}
+$$
+
+and
+
+$$
+R=\{(1,1),(2,2),(3,3),(1,2)\}
+$$
+
+Check every element:
+
+- $(1,1)$ ✓
+- $(2,2)$ ✓
+- $(3,3)$ ✓
+
+Since every element appears with itself,
+
+**R is reflexive.**
+
+
+
+### Example 2
+
+Let
+
+$$
+R=\{(1,1),(2,2)\}
+$$
+
+Since
+
+$$
+(3,3)\notin R
+$$
+
+the relation is **not reflexive**.
+
+
+
+### Visual Representation
+
+```
+1 ↺
+2 ↺
+3 ↺
+```
+
+Every vertex has a self-loop.
+
+
+
+### Quick Trick
+
+To check reflexivity:
+
+Count the self-loops.
+
+For a set containing
+
+$$
+n
+$$
+
+elements,
+
+there must be exactly
+
+$$
+n
+$$
+
+self-loops.
+
+
+
+## 2. Irreflexive Relation
+
+### Definition
+
+A relation is **irreflexive** if **no element is related to itself**.
+
+Mathematically,
+
+$$
+\forall a\in A,\ (a,a)\notin R
+$$
+
+
+
+### Example
+
+Let
+
+$$
+A=\{1,2,3\}
+$$
+
+and
+
+$$
+R=\{(1,2),(2,3),(3,1)\}
+$$
+
+There are no self-loops.
+
+Hence,
+
+**R is irreflexive.**
+
+
+
+### Counter Example
+
+If
+
+$$
+R=\{(1,1),(2,3)\}
+$$
+
+Since
+
+$$
+(1,1)\in R
+$$
+
+the relation is **not irreflexive**.
+
+
+
+### Visual Representation
+
+```
+1 → 2
+↑   ↓
+3 ←
+```
+
+No self-loops exist.
+
+
+
+### Important Note
+
+A relation **cannot** be both
+
+- Reflexive
+- Irreflexive
+
+unless the set is empty.
+
+
+
+## 3. Symmetric Relation
+
+### Definition
+
+A relation is **symmetric** if whenever
+
+$$
+(a,b)\in R
+$$
+
+then
+
+$$
+(b,a)\in R
+$$
+
+must also belong to the relation.
+
+Mathematically,
+
+$$
+(a,b)\in R
+\implies
+(b,a)\in R
+$$
+
+
+
+### Meaning
+
+Every arrow must have another arrow pointing back.
+
+
+
+### Example
+
+Let
+
+$$
+R=\{(1,2),(2,1),(2,3),(3,2)\}
+$$
+
+Check:
+
+- $(1,2)$ → $(2,1)$ ✓
+- $(2,3)$ → $(3,2)$ ✓
+
+Hence,
+
+**R is symmetric.**
+
+
+
+### Counter Example
+
+$$
+R=\{(1,2),(2,3)\}
+$$
+
+Since
+
+$$
+(2,1)
+$$
+
+does not exist,
+
+the relation is **not symmetric**.
+
+
+
+### Visual Representation
+
+```
+1 ⇄ 2 ⇄ 3
+```
+
+Every edge exists in both directions.
+
+
+
+### Important Note
+
+Self-loops automatically satisfy symmetry.
+
+Because
+
+$$
+(a,a)
+$$
+
+is its own reverse.
+
+
+
+## 4. Asymmetric Relation
+
+### Definition
+
+A relation is **asymmetric** if
+
+whenever
+
+$$
+(a,b)\in R
+$$
+
+then
+
+$$
+(b,a)\notin R
+$$
+
+Also,
+
+no element can relate to itself.
+
+Formally,
+
+$$
+(a,b)\in R
+\Rightarrow
+(b,a)\notin R
+$$
+
+
+
+### Example
+
+$$
+R=\{(1,2),(2,3)\}
+$$
+
+Reverse pairs do not exist.
+
+No self-loops exist.
+
+Hence,
+
+**R is asymmetric.**
+
+
+
+### Counter Example
+
+$$
+R=\{(1,2),(2,1)\}
+$$
+
+Both directions exist.
+
+Therefore,
+
+Not asymmetric.
+
+
+
+### Important Property
+
+Every asymmetric relation is automatically
+
+- Irreflexive
+
+because
+
+$$
+(a,a)
+$$
+
+would violate asymmetry.
+
+
+
+## 5. Antisymmetric Relation
+
+### Definition
+
+A relation is **antisymmetric** if
+
+whenever
+
+$$
+(a,b)\in R
+$$
+
+and
+
+$$
+(b,a)\in R
+$$
+
+then
+
+$$
+a=b
+$$
+
+Mathematically,
+
+$$
+(a,b)\in R
+\land
+(b,a)\in R
+\implies
+a=b
+$$
+
+
+
+### Meaning
+
+Different elements **cannot** point to each other.
+
+Only self-loops may exist in both directions.
+
+
+
+### Example
+
+$$
+R=\{
+(1,1),
+(2,2),
+(1,2)
+\}
+$$
+
+There is no
+
+$$
+(2,1)
+$$
+
+Hence,
+
+the relation is antisymmetric.
+
+
+
+### Counter Example
+
+$$
+R=\{
+(1,2),
+(2,1)
+\}
+$$
+
+Here,
+
+$$
+1\neq2
+$$
+
+but both pairs exist.
+
+Hence,
+
+Not antisymmetric.
+
+
+
+### Common Confusion
+
+Symmetric means
+
+```
+1 ⇄ 2
+```
+
+Antisymmetric means
+
+```
+1 → 2
+```
+
+or
+
+```
+2 → 1
+```
+
+but **not both**.
+
+
+
+### Important Note
+
+Identity relation is always antisymmetric.
+
+
+
+## 6. Transitive Relation
+
+### Definition
+
+A relation is **transitive** if
+
+whenever
+
+$$
+(a,b)\in R
+$$
+
+and
+
+$$
+(b,c)\in R
+$$
+
+then
+
+$$
+(a,c)\in R
+$$
+
+must also belong to the relation.
+
+Mathematically,
+
+$$
+(a,b)\in R
+\land
+(b,c)\in R
+\implies
+(a,c)\in R
+$$
+
+
+
+### Meaning
+
+If
+
+A is related to B
+
+and
+
+B is related to C
+
+then
+
+A must be related to C.
+
+
+
+### Example
+
+$$
+R=\{
+(1,2),
+(2,3),
+(1,3)
+\}
+$$
+
+Since
+
+$$
+(1,2)
+$$
+
+and
+
+$$
+(2,3)
+$$
+
+produce
+
+$$
+(1,3)
+$$
+
+the relation is transitive.
+
+
+
+### Counter Example
+
+$$
+R=\{
+(1,2),
+(2,3)
+\}
+$$
+
+Since
+
+$$
+(1,3)
+$$
+
+is missing,
+
+the relation is **not transitive**.
+
+
+
+### Visual Representation
+
+```
+1 → 2 → 3
+
+Therefore
+
+1 → 3
+```
+
+must exist.
+
+
+
+## Relationship Between Properties
+
+| Property | Condition |
+|----------|-----------|
+| Reflexive | Every element relates to itself |
+| Irreflexive | No element relates to itself |
+| Symmetric | If $(a,b)$ exists then $(b,a)$ exists |
+| Asymmetric | If $(a,b)$ exists then $(b,a)$ cannot exist |
+| Antisymmetric | If both directions exist then $a=b$ |
+| Transitive | $(a,b)$ and $(b,c)$ imply $(a,c)$ |
+
+
+
+## Comparison Table
+
+| Property | Self Loops Allowed | Reverse Pair Required | Reverse Pair Forbidden |
+|-----------|-------------------|----------------------|------------------------|
+| Reflexive | ✅ Yes | ❌ | ❌ |
+| Irreflexive | ❌ No | ❌ | ❌ |
+| Symmetric | ✅ Yes | ✅ Yes | ❌ |
+| Asymmetric | ❌ No | ❌ | ✅ Yes |
+| Antisymmetric | ✅ Yes | Only when $a=b$ | For different elements |
+| Transitive | Depends | Depends | Depends |
+
+
+
+## GATE Tips
+
+- **Reflexive** → Every element has a self-loop.
+- **Irreflexive** → No self-loops at all.
+- **Symmetric** → Every arrow has a matching reverse arrow.
+- **Asymmetric** → No reverse arrows and no self-loops.
+- **Antisymmetric** → Reverse arrows are allowed only for self-loops.
+- **Transitive** → Whenever a path of length two exists, the shortcut edge must also exist.
+
+
+
+## Memory Tricks
+
+| Property | Easy Way to Remember |
+|----------|----------------------|
+| Reflexive | Everyone likes themselves |
+| Irreflexive | Nobody likes themselves |
+| Symmetric | Friendship is mutual |
+| Asymmetric | One-way street |
+| Antisymmetric | Two-way only if it's the same person |
+| Transitive | Friend of a friend implies a direct connection |

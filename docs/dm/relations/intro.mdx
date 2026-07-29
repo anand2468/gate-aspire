@@ -1,0 +1,359 @@
+---
+title: set relations
+description: a brief introduction about set relations, type of relations with some examples
+sidebar_label: Introduction to set relations
+sidebar_position: 1
+keywords:
+  - set relations
+  - type of set relations
+---
+
+# Relations
+
+## 1. Introduction to Relations
+
+A **relation** is a mathematical way of describing a connection between elements of two sets. It is defined as a subset of the Cartesian product of two sets.
+
+### Ordered Pair
+
+An ordered pair is written as
+
+$$
+(a, b)
+$$
+
+where:
+
+- $a$ is the **first element**
+- $b$ is the **second element**
+
+Order matters.
+
+Example:
+
+$$
+(1,2) \neq (2,1)
+$$
+
+
+
+### Cartesian Product
+
+For two sets
+
+$$
+A=\{1,2\}, \qquad B=\{a,b,c\}
+$$
+
+their Cartesian product is
+
+$$
+A \times B=\{(1,a),(1,b),(1,c),(2,a),(2,b),(2,c)\}
+$$
+
+If
+
+$$
+|A|=m,\qquad |B|=n
+$$
+
+then
+
+$$
+|A\times B|=mn
+$$
+
+
+
+### Relation
+
+A relation from set $A$ to set $B$ is any subset of the Cartesian product.
+
+$$
+R\subseteq A\times B
+$$
+
+Example:
+
+Let
+
+$$
+A=\{1,2,3\}
+$$
+
+Then
+
+$$
+R=\{(1,2),(2,3),(3,1)\}
+$$
+
+is a relation on $A$.
+
+
+
+### Domain
+
+The **domain** is the set of all first elements.
+
+If
+
+$$
+R=\{(1,a),(2,b),(3,a)\}
+$$
+
+then
+
+$$
+\text{Domain}(R)=\{1,2,3\}
+$$
+
+
+
+### Codomain
+
+The codomain is the target set.
+
+If
+
+$$
+R:A\rightarrow B
+$$
+
+then
+
+$$
+\text{Codomain}=B
+$$
+
+
+
+### Range
+
+The range is the set of second elements that actually appear in the relation.
+
+Example:
+
+$$
+R=\{(1,a),(2,b),(3,a)\}
+$$
+
+Then
+
+$$
+\text{Range}(R)=\{a,b\}
+$$
+
+
+
+## 2. Representation of Relations
+
+Relations can be represented in three common ways.
+
+### A. Set (Roster) Representation
+
+The relation is written as a collection of ordered pairs.
+
+Example:
+
+$$
+R=\{(1,2),(2,3),(3,1)\}
+$$
+
+This is the simplest representation.
+
+
+
+### B. Matrix Representation
+
+Suppose
+
+$$
+A=\{1,2,3\}
+$$
+
+and
+
+$$
+R=\{(1,2),(2,3),(3,1)\}
+$$
+
+The matrix representation is
+
+$$
+M_R=
+\begin{bmatrix}
+0&1&0\\
+0&0&1\\
+1&0&0
+\end{bmatrix}
+$$
+
+where
+
+- Entry is **1** if the pair exists.
+- Entry is **0** otherwise.
+
+
+
+### C. Directed Graph (Digraph)
+
+Each element is represented as a **vertex**.
+
+Each ordered pair
+
+$$
+(a,b)
+$$
+
+is represented by a directed edge
+
+$$
+a\rightarrow b
+$$
+
+Example:
+
+For
+
+$$
+R=\{(1,2),(2,3),(3,1)\}
+$$
+
+the digraph contains
+
+- $1\rightarrow2$
+- $2\rightarrow3$
+- $3\rightarrow1$
+
+
+
+## 3. Types of Relations
+
+### Empty Relation
+
+A relation containing no ordered pairs.
+
+$$
+R=\varnothing
+$$
+
+
+
+### Universal Relation
+
+A relation containing every possible ordered pair.
+
+$$
+R=A\times A
+$$
+
+Example:
+
+If
+
+$$
+A=\{1,2\}
+$$
+
+then
+
+$$
+R=\{(1,1),(1,2),(2,1),(2,2)\}
+$$
+
+
+
+### Identity Relation
+
+A relation containing only pairs where both elements are equal.
+
+$$
+I=\{(a,a)\mid a\in A\}
+$$
+
+Example:
+
+$$
+A=\{1,2,3\}
+$$
+
+then
+
+$$
+I=\{(1,1),(2,2),(3,3)\}
+$$
+
+
+
+### Inverse Relation
+
+The inverse relation reverses every ordered pair.
+
+If
+
+$$
+R=\{(1,2),(2,3)\}
+$$
+
+then
+
+$$
+R^{-1}=\{(2,1),(3,2)\}
+$$
+
+In general,
+
+$$
+R^{-1}=\{(b,a)\mid(a,b)\in R\}
+$$
+
+
+
+### Complement of a Relation
+
+The complement contains every ordered pair that is **not** in the relation.
+
+$$
+R^c=(A\times A)-R
+$$
+
+Example:
+
+If
+
+$$
+A=\{1,2\}
+$$
+
+and
+
+$$
+R=\{(1,1),(2,2)\}
+$$
+
+then
+
+$$
+R^c=\{(1,2),(2,1)\}
+$$
+
+
+
+## Summary
+
+| Topic | Definition |
+|-------|------------|
+| Ordered Pair | Pair of elements where order matters |
+| Cartesian Product | Set of all possible ordered pairs |
+| Relation | Subset of Cartesian product |
+| Domain | First elements of the relation |
+| Codomain | Target set |
+| Range | Second elements actually used |
+| Set Representation | Collection of ordered pairs |
+| Matrix Representation | Binary matrix showing existing pairs |
+| Digraph | Directed graph representation |
+| Empty Relation | No ordered pairs |
+| Universal Relation | All possible ordered pairs |
+| Identity Relation | Only $(a,a)$ pairs |
+| Inverse Relation | Reverse every ordered pair |
+| Complement Relation | All pairs not present in the relation |

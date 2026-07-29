@@ -1,0 +1,462 @@
+
+/**
+ * Any CSS included here will be global.
+ * Uses Infima variables for easy theming.
+ */
+
+/* Light Theme */
+/* :root {
+  --ifm-color-primary: #111111;
+  --ifm-color-primary-dark: #000000;
+  --ifm-color-primary-darker: #000000;
+  --ifm-color-primary-darkest: #000000;
+  --ifm-color-primary-light: #333333;
+  --ifm-color-primary-lighter: #444444;
+  --ifm-color-primary-lightest: #666666;
+
+  --ifm-background-color: #fafafa;
+  --ifm-background-surface-color: #ffffff;
+
+  --ifm-font-color-base: #111111;
+  --ifm-color-content-secondary: #666666;
+
+  --ifm-navbar-background-color: rgba(255, 255, 255, 0.9);
+  --ifm-footer-background-color: #ffffff;
+
+  --ifm-card-background-color: #ffffff;
+
+  --ifm-border-color: #e8e8e8;
+
+  --ifm-code-background: #f5f5f5;
+
+  --ifm-global-radius: 12px;
+
+  --ifm-heading-font-weight: 700;
+  --ifm-font-family-base: Inter, system-ui, -apple-system, BlinkMacSystemFont,
+    "Segoe UI", sans-serif;
+
+  --ifm-spacing-horizontal: 1.5rem;
+} */
+
+/* Dark Theme */
+/* [data-theme='dark'] {
+  --ifm-color-primary: #ffffff;
+  --ifm-color-primary-dark: #f2f2f2;
+  --ifm-color-primary-light: #ffffff;
+
+  --ifm-background-color: #0f0f0f;
+  --ifm-background-surface-color: #171717;
+
+  --ifm-navbar-background-color: rgba(15, 15, 15, 0.9);
+  --ifm-footer-background-color: #111111;
+
+  --ifm-font-color-base: #f5f5f5;
+  --ifm-color-content-secondary: #b3b3b3;
+
+  --ifm-card-background-color: #171717;
+
+  --ifm-border-color: #2b2b2b;
+
+  --ifm-code-background: #202020;
+} */
+
+
+/* ------------------------- */
+/* Navbar */
+/* ------------------------- */
+/*
+.navbar {
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid var(--ifm-border-color);
+  box-shadow: none;
+}
+
+.navbar__title {
+  font-weight: 700;
+}
+
+.navbar__link:hover {
+  color: var(--ifm-color-primary);
+}
+*/
+
+/* ------------------------- */
+/* Buttons */
+/* ------------------------- */
+
+/*
+.button {
+  border-radius: 10px;
+  transition: all .2s ease;
+}
+
+.button--primary {
+  background: var(--ifm-color-primary);
+  border: none;
+}
+
+.button--primary:hover {
+  transform: translateY(-2px);
+}
+
+.button--secondary {
+  background: transparent;
+  border: 1px solid var(--ifm-border-color);
+  color: var(--ifm-font-color-base);
+}
+
+.button--secondary:hover {
+  background: rgba(0,0,0,.05);
+}
+
+[data-theme='dark'] .button--secondary:hover {
+  background: rgba(255,255,255,.06);
+} */
+
+/* ------------------------- */
+/* Cards */
+/* ------------------------- */
+/* 
+.card {
+  border: 1px solid var(--ifm-border-color);
+  border-radius: 16px;
+  box-shadow: none;
+  transition: .25s;
+}
+
+.card:hover {
+  transform: translateY(-4px);
+} */
+
+/* ------------------------- */
+/* Hero */
+/* ------------------------- */
+
+/* .hero {
+  background: transparent;
+}
+
+.hero__title {
+  font-size: clamp(3rem, 6vw, 4.8rem);
+  font-weight: 800;
+}
+
+.hero__subtitle {
+  color: var(--ifm-color-content-secondary);
+  font-size: 1.2rem;
+  max-width: 700px;
+  margin: auto;
+} */
+
+/* ------------------------- */
+/* Markdown */
+/* ------------------------- */
+
+/* .markdown h1,
+.markdown h2,
+.markdown h3 {
+  font-weight: 700;
+}
+
+.markdown img {
+  border-radius: 12px;
+} */
+
+/* ------------------------- */
+/* Tables */
+/* ------------------------- */
+
+/* table {
+  border-radius: 12px;
+  overflow: hidden;
+} */
+
+/* ------------------------- */
+/* Code */
+/* ------------------------- */
+
+/* pre {
+  border-radius: 12px;
+} */
+
+/* code {
+  border-radius: 6px;
+} */
+
+/* ------------------------- */
+/* Footer */
+/* ------------------------- */
+
+/* .footer {
+  border-top: 1px solid var(--ifm-border-color);
+} */
+
+/* ------------------------- */
+/* Pagination */
+/* ------------------------- */
+
+/* .pagination-nav__link {
+  border-radius: 12px;
+  border: 1px solid var(--ifm-border-color);
+} */
+
+/* ------------------------- */
+/* Sidebar */
+/* ------------------------- */
+
+/* .menu__link {
+  border-radius: 8px;
+}
+
+.menu__link--active {
+  font-weight: 600;
+} */
+
+/* ------------------------- */
+/* Search */
+/* ------------------------- */
+
+/* .navbar__search-input {
+  border-radius: 10px;
+} */
+
+/* ------------------------- */
+/* Smooth scrolling */
+/* ------------------------- */
+
+/* html {
+  scroll-behavior: smooth;
+} */
+
+
+/**
+ * Minimal Black & White Docusaurus Theme
+ * Replace your entire src/css/custom.css with this.
+ */
+
+ :root {
+  /* Primary */
+  --ifm-color-primary: #3f3f46;
+  --ifm-color-primary-dark: #27272a;
+  --ifm-color-primary-darker: #18181b;
+  --ifm-color-primary-darkest: #09090b;
+  --ifm-color-primary-light: #52525b;
+  --ifm-color-primary-lighter: #71717a;
+  --ifm-color-primary-lightest: #a1a1aa;
+
+  /* Background */
+  --ifm-background-color: #fcfcfc;
+  --ifm-background-surface-color: #f7f7f8;
+
+  /* Typography */
+  --ifm-font-color-base: #3f3f46;
+  --ifm-heading-color: #18181b;
+
+  /* Navbar */
+  --ifm-navbar-background-color: rgba(252, 252, 252, 0.9);
+  --ifm-navbar-link-color: #52525b;
+  --ifm-navbar-link-hover-color: #18181b;
+
+  /* Sidebar */
+  --ifm-menu-color: #52525b;
+  --ifm-menu-color-active: #18181b;
+  --ifm-menu-color-background-active: #f1f1f2;
+
+  /* Footer */
+  --ifm-footer-background-color: #f7f7f8;
+  --ifm-footer-color: #71717a;
+  --ifm-footer-link-color: #3f3f46;
+  --ifm-footer-link-hover-color: #18181b;
+  --ifm-footer-title-color: #18181b;
+
+  /* Links */
+  --ifm-link-color: #2563eb;
+  --ifm-link-hover-color: #1d4ed8;
+
+  /* Code */
+  --ifm-code-background: #f3f4f6;
+  --ifm-pre-background: #f6f8fa;
+
+  /* Borders */
+  --ifm-hr-border-color: #e4e4e7;
+  --ifm-table-border-color: #e4e4e7;
+
+  /* Radius */
+  --ifm-global-radius: 8px;
+}
+
+/* ---------------------- */
+/* Dark Mode */
+/* ---------------------- */
+
+[data-theme='dark'] {
+  /* Primary */
+  --ifm-color-primary: #d4d4d8;
+  --ifm-color-primary-dark: #e4e4e7;
+  --ifm-color-primary-darker: #f4f4f5;
+  --ifm-color-primary-darkest: #fafafa;
+  --ifm-color-primary-light: #a1a1aa;
+  --ifm-color-primary-lighter: #71717a;
+  --ifm-color-primary-lightest: #52525b;
+
+  /* Background */
+  --ifm-background-color: #0f1115;
+  --ifm-background-surface-color: #16181d;
+
+  /* Typography */
+  --ifm-font-color-base: #d4d4d8;
+  --ifm-heading-color: #fafafa;
+
+  /* Navbar */
+  --ifm-navbar-background-color: rgba(15, 17, 21, 0.9);
+  --ifm-navbar-link-color: #a1a1aa;
+  --ifm-navbar-link-hover-color: #ffffff;
+
+  /* Sidebar */
+  --ifm-menu-color: #a1a1aa;
+  --ifm-menu-color-active: #ffffff;
+  --ifm-menu-color-background-active: #23262d;
+
+  /* Footer */
+  --ifm-footer-background-color: #16181d;
+  --ifm-footer-color: #a1a1aa;
+  --ifm-footer-link-color: #d4d4d8;
+  --ifm-footer-link-hover-color: #ffffff;
+  --ifm-footer-title-color: #ffffff;
+
+  /* Links */
+  --ifm-link-color: #60a5fa;
+  --ifm-link-hover-color: #93c5fd;
+
+  /* Code */
+  --ifm-code-background: #1d2128;
+  --ifm-pre-background: #14171c;
+
+  /* Borders */
+  --ifm-hr-border-color: #2d3138;
+  --ifm-table-border-color: #2d3138;
+}
+
+/* ---------------------- */
+/* Minimal Styling */
+/* ---------------------- */
+
+
+.navbar {
+  border-bottom: 1px solid var(--ifm-hr-border-color);
+  box-shadow: none;
+}
+
+.footer {
+  border-top: 1px solid var(--ifm-hr-border-color);
+}
+
+.theme-doc-sidebar-container {
+  border-right: 1px solid var(--ifm-hr-border-color);
+}
+
+.menu__link {
+  border-radius: 6px;
+  transition: all 0.2s ease;
+}
+
+.menu__link:hover {
+  background: rgba(0, 0, 0, 0.05);
+}
+
+[data-theme='dark'] .menu__link:hover {
+  background: rgba(255, 255, 255, 0.08);
+}
+
+.menu__link--active {
+  font-weight: 600;
+}
+
+.markdown img {
+  border-radius: 8px;
+}
+
+table {
+  border-collapse: collapse;
+}
+
+th {
+  background: var(--ifm-background-surface-color);
+}
+
+code {
+  border-radius: 4px;
+}
+
+pre {
+  border-radius: 10px;
+  border: 1px solid var(--ifm-hr-border-color);
+}
+
+.pagination-nav__link {
+  border: 1px solid var(--ifm-hr-border-color);
+  border-radius: 10px;
+}
+
+.button {
+  border-radius: 8px;
+}
+
+.hero {
+  background: transparent;
+}
+
+.hero__title {
+  font-weight: 700;
+}
+
+.hero__subtitle {
+  color: var(--ifm-font-color-base);
+  opacity: 0.7;
+}
+
+a {
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+
+/* added next */
+
+.navbar {
+  border-bottom: 1px solid var(--ifm-hr-border-color);
+  backdrop-filter: blur(10px);
+}
+
+.footer {
+  border-top: 1px solid var(--ifm-hr-border-color);
+}
+
+.theme-doc-sidebar-container {
+  border-right: 1px solid var(--ifm-hr-border-color);
+}
+
+.menu__link {
+  border-radius: 8px;
+  transition: 0.2s ease;
+}
+
+.menu__link:hover {
+  background: rgba(120, 120, 120, 0.08);
+}
+
+.menu__link--active {
+  font-weight: 600;
+}
+
+pre {
+  border: 1px solid var(--ifm-hr-border-color);
+  border-radius: 10px;
+}
+
+code {
+  border-radius: 5px;
+}

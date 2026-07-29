@@ -1,0 +1,9 @@
+{
+  "label": "discrete mathematics",
+  "position":3,
+  "link": {
+    "slug": "/dm",
+    "type": "generated-index",
+    "description": "The most important Discrete Mathematics concepts."
+  }
+}
