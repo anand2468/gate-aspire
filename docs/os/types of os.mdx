@@ -1,0 +1,48 @@
+---
+id: types-of-os
+title: Types of OS
+sidebar_position: 3
+---
+
+import ImageCarousel from "@site/src/components/ImageCorousel"
+
+
+> **throughput** <br/>
+> it means the number of jobs completed for unit time is called throughput of a system
+
+## 1. Batch OS
+
+<ImageCarousel
+  images={[
+    '/img/os/batch-os-1.png',
+    '/img/os/batch-os-2.png',
+    '/img/os/batch-os-3.png',
+    '/img/os/batch-os-4.png',
+    '/img/os/batch-os-5.png',
+  ]}
+/>
+
+- If one job is finished completely then only another job will be scheduled into CPU
+- Increased cpu idleness
+- Decreased throughput of the systems
+- ex: IBM os 2
+
+## 2. Multi-Programming OS
+
+<ImageCarousel
+  images={[
+    '/img/os/multi-programming-1.png',
+    '/img/os/multi-programming-2.png',
+    '/img/os/multi-programming-3.png',
+  ]}
+/>
+
+- if job is leaving the CPU then the another job which is ready for execution will be scheduled on to the CPU
+- Increased CPU utilization
+- increased throughput of the system
+- ex: windows, unix, linus.
+
+## Multi-Taksing
+
+![multi-tasking os imgae](/img/multi_tasking_os.png)
+

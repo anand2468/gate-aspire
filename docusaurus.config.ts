@@ -7,7 +7,7 @@ import rehypeKatex from 'rehype-katex';
 // This runs in Node.js - Don't use client-side code here (browser APIs, JSX...)
 
 const config: Config = {
-  title: 'gate-aspire',
+  title: 'gate aspire',
   tagline: 'Everything You Need to Crack GATE.',
   favicon: 'img/gate-aspire-logo.png',
 
@@ -16,7 +16,7 @@ const config: Config = {
     v4: true, // Improve compatibility with the upcoming Docusaurus v4
   },
 
-  url: 'https://gate-aspire.web.app',
+  url: 'https://gateaspire.in',
   baseUrl: '/',
 
   organizationName: 'anand2468', // Usually your GitHub org/user name.
@@ -37,9 +37,11 @@ const config: Config = {
           routeBasePath:"/",
           sidebarPath: './sidebars.ts',
           editUrl:
-            'https://github.com/anand2468/gate-aspire/tree/main/packages/create-docusaurus/templates/shared/',
+            'https://github.com/anand2468/gate-aspire/blob/main',
           remarkPlugins: [remarkMath],
           rehypePlugins: [rehypeKatex],
+          showLastUpdateTime: true,
+          showLastUpdateAuthor: true,
         },
         blog:false,
         theme: {
@@ -61,7 +63,7 @@ const config: Config = {
       respectPrefersColorScheme: true,
     },
     navbar: {
-      title: 'Gate-Aspire',
+      title: 'Gate Aspire',
       logo: {
         alt: 'My Site Logo',
         src: 'img/gate-aspire-logo.png',
@@ -75,7 +77,19 @@ const config: Config = {
         {
           type:"docSidebar",
           sidebarId:"dmSidebar",
-          label: 'Discrete Mathematics',
+          label: 'Discrete Maths',
+          position:'left'
+        },
+        {
+          type:"docSidebar",
+          sidebarId:"osSidebar",
+          label: 'Operating System',
+          position:'left'
+        },
+        {
+          type:"docSidebar",
+          sidebarId:"dldSidebar",
+          label: 'Digital Logic Design',
           position:'left'
         },
         {
@@ -85,7 +99,7 @@ const config: Config = {
           position:"left"
         },
         {
-          href: 'https://github.com/facebook/docusaurus',
+          href: 'https://github.com/anand2468/gate-aspire',
           label: 'GitHub',
           position: 'right',
         },
@@ -95,15 +109,28 @@ const config: Config = {
       // style: 'dark',
       links: [
         {
-          title: 'Subjects',
+          title: 'Foundation',
           items: [
             {
-              label: 'Engineering Mathematics',
+              label: 'Engineering Maths',
               to: '/em',
             },
             {
-              label: 'Discrete Mathematics',
+              label: 'Discrete Maths',
               to: '/dm'
+            },
+            {
+              label: 'Digital Logic Design',
+              to: '/dld'
+            },
+          ],
+        },
+        {
+          title: 'Core Subjects',
+          items: [
+            {
+              label: 'Operating System',
+              to: '/os',
             },
             {
               label: 'C Programming',
@@ -112,7 +139,7 @@ const config: Config = {
           ],
         },
         {
-          title: 'More',
+          title: 'Contribute',
           items: [
             {
               label: 'GitHub',
@@ -126,6 +153,15 @@ const config: Config = {
     prism: {
       theme: prismThemes.github,
       darkTheme: prismThemes.dracula,
+    },
+    metadata: [
+      {name: 'keywords', content: 'GATE, GATE 2027, Gate preparation, gate pyq, gate previous questions, gate notes, gate workbook, free gate course'},
+    ],
+
+    docs: {
+      sidebar: {
+        hideable: true,
+      },
     },
   } satisfies Preset.ThemeConfig,
 

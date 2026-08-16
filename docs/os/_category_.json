@@ -1,0 +1,8 @@
+{
+    "label":"Operating System",
+    "link":{
+        "slug":"/os",
+        "type":"generated-index",
+        "description":"important concepts of operating system"
+    }
+}

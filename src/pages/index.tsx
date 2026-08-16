@@ -1,44 +1,18 @@
 import type {ReactNode} from 'react';
 import clsx from 'clsx';
-import Link from '@docusaurus/Link';
 import useDocusaurusContext from '@docusaurus/useDocusaurusContext';
 import Layout from '@theme/Layout';
-import HomepageFeatures from '@site/src/components/HomepageFeatures';
-import Heading from '@theme/Heading';
-
 import styles from './index.module.css';
 import st from './main.module.css'
 
-function HomepageHeader() {
-  const {siteConfig} = useDocusaurusContext();
-  return (
-    <header className={clsx('hero hero--primary', styles.heroBanner)}>
-      <div className="container">
-        <Heading as="h1" className="hero__title">
-          {siteConfig.title}
-        </Heading>
-        <p className="hero__subtitle">{siteConfig.tagline}</p>
-        <div className={styles.buttons}>
-          <Link
-            className="button button--secondary button--lg"
-            to="/intro">
-            Docusaurus Tutorial - 5min ⏱️
-          </Link>
-        </div>
-      </div>
-    </header>
-  );
-}
 
 export default function Home(): ReactNode {
   const {siteConfig} = useDocusaurusContext();
   return (
     <Layout
       title={`${siteConfig.title}`}
-      description="Everything You Need to Crack GATE. Comprehensive notes, previous year questions, formulas,
-            practice sets, mock tests, and structured preparation for every
-            GATE subject—all in one place.">
-      
+      description="Prepare for GATE with free notes, previous year questions, mock tests, practice problems and study material. Learn, practice and improve your GATE preparation with GATE Aspire.">
+           
       <section className={clsx('hero hero--primary', styles.heroBanner)}>
 
         <div>
@@ -54,7 +28,7 @@ export default function Home(): ReactNode {
           <div className="buttons">
             {/* <a href="#" className="button button--primary">Start Learning</a>
             <span style={{width:"5px"}}></span> */}
-            <a href="/intro" className="button button--secondary button--lg">Start Learning</a>
+            <a href="/index" className="button button--secondary button--lg">Start Learning</a>
           </div>
 
         </div>
@@ -129,7 +103,7 @@ export default function Home(): ReactNode {
             and revision resources.
           </p>
 
-          <a href="/intro" className="button button--primary">Explore Resources</a>
+          <a href="/index" className="button button--primary">Explore Resources</a>
 
         </section>
       </div>

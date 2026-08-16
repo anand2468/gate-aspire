@@ -1,0 +1,85 @@
+---
+id: boolean-algebra
+title: Boolean Algebra
+desctiption: detailed explanation about boolean algebra, this page consists of boolean variables, operators, and important properties
+keywords:
+  - boolean algebra
+  - boolean operators
+  - boolean properties
+  - duality
+
+---
+
+##  Boolean Variables
+for base system r there will be r symbols used to represent the system
+- for r=2 symbols are: 0, 1
+- for r = 10, \{0, 1, 2,...9\}
+- for r = 8, \{0, 1, 2,...,7 \}
+
+## Boolean Operators 
+- **Unitory:** `NOT`
+- **Binary:** `AND`, `OR`
+
+## OR operator 
+The result of OR operation is ONE if *atleast one* variable is ONE
+
+| A | B | A+B|
+|---|--|----|
+| 0| 0 | 0 |
+| 0| 1 | 1 |
+| 1| 0 | 1 | 
+| 1| 1 | 1 |
+
+**important properties**
+- when A = 0, y = B
+- when A = 1, y = 1
+- when A = B = x, y = x
+- when A != B, y = 1
+
+> In OR implementation  the `enable input=0` and `disable input=1`
+
+
+
+## AND operator 
+The result of AND operation is ZERO if *atleast one* variable is ZERO
+
+| A |B | A+B|
+|---|--|----|
+| 0 |0 | 0 |
+| 0 |1 | 0 |
+| 1 |0 | 0 | 
+| 1 |1 | 1 |
+
+**important properties**
+- when A = 0, y = 0
+- when A = 1, y = B
+- when A = B = x, y = x
+- when A != B, y = 0
+
+> In OR implementation  the `enable input=1` and `disable input=0`
+
+
+## NOT operator
+it changes the input ONE to ZERO and ZERO to ONE, denoted by y = A'
+
+| A | y = A'|
+|---|---|
+| 0 | 1 |
+| 1 | 0 |
+
+## Boolean Algebra Properties 
+
+|OR | AND |
+|---|--|
+|1. A+A+A.....A = A | A.A.....A = A |
+|2. A+0 = A | A.1 = A|
+|1. A+1 = 1 | A.0 = 0|
+|1. A.A' = 0 | A + A' = 1|
+|5. A'' = A| |
+|6. A + BC = (A+B)(B+C) | A(B+C) = AB + AC|
+|7. A + A'B = A+B | A(A'B) = AB |
+|8. A'AB = A'+B | A'(A+B) = A'B |
+|9. A + AB = A | A(A+B) = A |
+|10. AB + A'C + BC = AB + A'C ( consensus property) | (A+B)(A' + C)(B+C) = (A+B)(A'+C)|
+|11. (x+y)(x' + z) = xz + x'y | xy + x'z = (x+z)(x'+y)|
+|12. (A+B+C+....)' = A'.B'.C'.... | (ABC....)' = A' + B' + C'... (demorgan's property)|
