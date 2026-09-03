@@ -1,4 +1,4 @@
 User-agent: *
 Allow: /
 
-Sitemap: https://gate-aspire.web.app/sitemap.xml
+Sitemap: https://gateaspire.in/sitemap.xml

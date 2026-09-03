@@ -1,4 +1,4 @@
- :root {
+:root {
   /* Primary */
   --ifm-color-primary: #3f3f46;
   --ifm-color-primary-dark: #27272a;
@@ -15,6 +15,13 @@
   /* Typography */
   --ifm-font-color-base: #3f3f46;
   --ifm-heading-color: #18181b;
+  --ifm-h1-font-size: 1.85rem;
+  --ifm-h2-font-size: 1.45rem;
+  --ifm-h3-font-size: 1.2rem;
+  --ifm-h4-font-size: 1.05rem;
+  --ifm-h5-font-size: 0.95rem;
+  --ifm-h6-font-size: 0.85rem;
+  --ifm-heading-line-height: 1.3;
 
   /* Navbar */
   --ifm-navbar-background-color: rgba(252, 252, 252, 0.9);
@@ -102,9 +109,51 @@
 }
 
 /* ---------------------- */
-/* Minimal Styling */
+/* Minimal & Global Heading Sizing */
 /* ---------------------- */
 
+h1 {
+  font-size: var(--ifm-h1-font-size);
+}
+
+h2 {
+  font-size: var(--ifm-h2-font-size);
+}
+
+h3 {
+  font-size: var(--ifm-h3-font-size);
+}
+
+h4 {
+  font-size: var(--ifm-h4-font-size);
+}
+
+.markdown h1 {
+  font-size: 1.85rem;
+  margin-top: 1.25rem;
+  margin-bottom: 0.75rem;
+  line-height: 1.25;
+}
+
+.markdown h2 {
+  font-size: 1.45rem;
+  margin-top: 1.5rem;
+  margin-bottom: 0.6rem;
+  line-height: 1.3;
+}
+
+.markdown h3 {
+  font-size: 1.2rem;
+  margin-top: 1.25rem;
+  margin-bottom: 0.5rem;
+  line-height: 1.35;
+}
+
+.markdown h4 {
+  font-size: 1.05rem;
+  margin-top: 1rem;
+  margin-bottom: 0.4rem;
+}
 
 .navbar {
   border-bottom: 1px solid var(--ifm-hr-border-color);
@@ -172,51 +221,20 @@ pre {
 
 .hero__title {
   font-weight: 700;
+  font-size: clamp(1.65rem, 3.5vw, 2.5rem);
 }
 
 .hero__subtitle {
   color: var(--ifm-font-color-base);
-  opacity: 0.7;
+  opacity: 0.75;
+  font-size: clamp(0.95rem, 1.8vw, 1.1rem);
 }
 
 a {
   text-decoration: none;
 }
 
-
-
-/* added next */
-
-.navbar {
-  border-bottom: 1px solid var(--ifm-hr-border-color);
-}
-
-.footer {
-  border-top: 1px solid var(--ifm-hr-border-color);
-}
-
-.theme-doc-sidebar-container {
-  border-right: 1px solid var(--ifm-hr-border-color);
-}
-
-.menu__link {
-  border-radius: 8px;
-  transition: 0.2s ease;
-}
-
-.menu__link:hover {
-  background: rgba(120, 120, 120, 0.08);
-}
-
-.menu__link--active {
-  font-weight: 600;
-}
-
-pre {
-  border: 1px solid var(--ifm-hr-border-color);
-  border-radius: 10px;
-}
-
-code {
-  border-radius: 5px;
+/* table of contents link */
+.table-of-contents__link--active {
+  color: #60a5fa;
 }

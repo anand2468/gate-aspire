@@ -7,8 +7,8 @@ import rehypeKatex from 'rehype-katex';
 // This runs in Node.js - Don't use client-side code here (browser APIs, JSX...)
 
 const config: Config = {
-  title: 'gate aspire',
-  tagline: 'Everything You Need to Crack GATE.',
+  title: 'GATE Aspire | Free GATE Preparation, Courses, Test Series & Notes',
+  tagline: 'Free GATE Exam Preparation Platform: Computer Science Courses, Topic-wise Test Series, Solved PYQs & Notes',
   favicon: 'img/gate-aspire-logo.png',
 
   // Future flags, see https://docusaurus.io/docs/api/docusaurus-config#future
@@ -29,6 +29,54 @@ const config: Config = {
     locales: ['en'],
   },
 
+  clientModules: ['./src/clientModules/gtagInit.ts'],
+
+  headTags: [
+    {
+      tagName: 'script',
+      attributes: {
+        type: 'text/javascript',
+      },
+      innerHTML: `
+        window.dataLayer = window.dataLayer || [];
+        if (typeof window.gtag !== 'function') {
+          window.gtag = function(){ window.dataLayer.push(arguments); };
+        }
+      `,
+    },
+    {
+      tagName: 'script',
+      attributes: {
+        type: 'application/ld+json',
+      },
+      innerHTML: JSON.stringify({
+        '@context': 'https://schema.org',
+        '@graph': [
+          {
+            '@type': 'WebSite',
+            '@id': 'https://gateaspire.in/#website',
+            'url': 'https://gateaspire.in/',
+            'name': 'GATE Aspire',
+            'description': 'Free GATE Preparation Platform: Computer Science Courses, Topic-wise Test Series, Solved PYQs & Notes',
+            'publisher': {
+              '@type': 'EducationalOrganization',
+              'name': 'GATE Aspire',
+              'url': 'https://gateaspire.in/'
+            }
+          },
+          {
+            '@type': 'EducationalOrganization',
+            '@id': 'https://gateaspire.in/#organization',
+            'name': 'GATE Aspire',
+            'url': 'https://gateaspire.in/',
+            'logo': 'https://gateaspire.in/img/gate-aspire-logo.png',
+            'description': 'Free online platform for GATE Computer Science preparation, courses, test series, and study materials.'
+          }
+        ]
+      }),
+    },
+  ],
+
   presets: [
     [
       'classic',
@@ -47,7 +95,13 @@ const config: Config = {
         theme: {
           customCss: './src/css/custom.css',
         },
-
+        sitemap: {
+          lastmod: 'date',
+          changefreq: 'weekly',
+          priority: 0.8,
+          ignorePatterns: ['/tags/**'],
+          filename: 'sitemap.xml',
+        },
         gtag: {
           trackingID: 'G-1VFLH70WF0',
           anonymizeIP: true,
@@ -65,7 +119,7 @@ const config: Config = {
     navbar: {
       title: 'Gate Aspire',
       logo: {
-        alt: 'My Site Logo',
+        alt: 'Gate Aspire Logo',
         src: 'img/gate-aspire-logo.png',
       },
       items: [
@@ -97,6 +151,11 @@ const config: Config = {
           sidebarId:"cSidebar",
           label:"C Programming",
           position:"left"
+        },
+        {
+          href: 'https://github.com/anand2468/gate-aspire',
+          label: 'Contribute',
+          position: 'right',
         },
         {
           href: 'https://github.com/anand2468/gate-aspire',
@@ -155,7 +214,29 @@ const config: Config = {
       darkTheme: prismThemes.dracula,
     },
     metadata: [
-      {name: 'keywords', content: 'GATE, GATE 2027, Gate preparation, gate pyq, gate previous questions, gate notes, gate workbook, free gate course'},
+      {
+        name: 'keywords',
+        content:
+          'GATE preparation, GATE test series, GATE course, GATE Computer Science, GATE CSE notes, GATE mock test, GATE pyq solved questions, free GATE course, GATE exam syllabus, GATE preparation online, GATE Discrete Mathematics, GATE Operating Systems, GATE Engineering Mathematics, GATE Digital Logic, GATE C Programming',
+      },
+      {
+        name: 'description',
+        content:
+          'Crack GATE Computer Science with free subject courses, topic-wise test series, solved previous year questions (PYQs), formulas, and comprehensive preparation notes.',
+      },
+      {name: 'author', content: 'GATE Aspire'},
+      {name: 'robots', content: 'index, follow'},
+      {property: 'og:site_name', content: 'GATE Aspire'},
+      {property: 'og:type', content: 'website'},
+      {property: 'og:locale', content: 'en_US'},
+      {name: 'twitter:card', content: 'summary_large_image'},
+      {name: 'twitter:title', content: 'GATE Aspire - Free GATE Preparation, Courses & Test Series'},
+      {
+        name: 'twitter:description',
+        content:
+          'Comprehensive free GATE exam preparation: Computer Science courses, topic-wise test series, solved PYQs, and structured subject notes.',
+      },
+      {name: 'twitter:image', content: 'https://gateaspire.in/img/og_image.png'},
     ],
 
     docs: {
@@ -164,7 +245,6 @@ const config: Config = {
       },
     },
   } satisfies Preset.ThemeConfig,
-
 
   stylesheets: [
     {
