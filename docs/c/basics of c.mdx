@@ -1,46 +1,111 @@
 ---
 title: C Programming Basics for GATE Exam
 id: basics
-description: Learn C programming basics for GATE preparation including operator precedence, associativity, relational operators, modulus, and scanf return values.
+description: Master C programming fundamentals for GATE CS including operator precedence, associativity, evaluation order, scanf return values, and solved GATE questions.
 keywords: [C programming GATE, operator precedence C, scanf return value, C GATE notes, GATE preparation]
 ---
 
-## operators
+# C Programming Fundamentals for GATE
 
-|operator | precedence | associativity|
-|---------|------------|--------------|
-|() | 1 high | left to right|
-| power | 2 | right to left |
-| * / % | 3 | left to right |
-| + - | 4 | L - R |
-| = | 5 low | R - L |
+C Programming is a foundational topic in the **GATE Computer Science & IT** syllabus, contributing **4–8 marks** every year. Questions heavily test operator precedence, side-effects, evaluation order, pointer arithmetic, recursion, and memory representation.
 
-> **Associativity**   
-> if 2 or more operators have same precedance then the expression will be evaluated by using Associativity 
+---
 
-## Relational and Logical operators 
-- "\0", 0, null are False
-- 1 is true
-- assiciativity left to right 
+## 1. Operator Precedence & Associativity
 
-## modulus operator (%)
-1. modulus always gives numerator sign
-1. mod dosen't work on float values
-1. if value is small withghout sign it gives same value as output
+When an expression contains multiple operators, operator **precedence** determines which operator is evaluated first. When operators have equal precedence, **associativity** dictates whether the expression is evaluated from left-to-right (`L → R`) or right-to-left (`R → L`).
 
-## Scanf()
+| Precedence Rank | Operators | Description | Associativity |
+| :--- | :--- | :--- | :--- |
+| **1 (Highest)** | `()` `[]` `->` `.` | Postfix, Subscript, Member Access | Left-to-Right |
+| **2** | `++` `--` `+` `-` `!` `~` `*` `&` `sizeof` | Prefix Increment/Decrement, Unary operations, Address-of, Dereference | **Right-to-Left** |
+| **3** | `*` `/` `%` | Multiplicative (Arithmetic) | Left-to-Right |
+| **4** | `+` `-` | Additive (Arithmetic) | Left-to-Right |
+| **5** | `<<` `>>` | Bitwise Shift Left / Right | Left-to-Right |
+| **6** | `<` `<=` `>` `>=` | Relational Comparisons | Left-to-Right |
+| **7** | `==` `!=` | Equality Comparisons | Left-to-Right |
+| **8** | `&` | Bitwise AND | Left-to-Right |
+| **9** | `^` | Bitwise XOR | Left-to-Right |
+| **10** | `\|` | Bitwise OR | Left-to-Right |
+| **11** | `&&` | Logical AND (Short-circuit) | Left-to-Right |
+| **12** | `\|\|` | Logical OR (Short-circuit) | Left-to-Right |
+| **13** | `?:` | Conditional (Ternary) | **Right-to-Left** |
+| **14** | `=` `+=` `-=` `*=` `/=` `%=` | Assignment Operators | **Right-to-Left** |
+| **15 (Lowest)** | `,` | Comma Operator | Left-to-Right |
 
-scanf return int, it return no. of proper inputs given according to format spicifier
+> **Key Takeaway for GATE:**
+> Unary operators, Ternary (`?:`), and Assignment operators (`=`) evaluate from **Right to Left** (`R → L`). Almost all other operators evaluate from **Left to Right** (`L → R`).
 
-## Ternary operator
-$$
-(condition)\, ? \, True \, : \, False
-$$
-- in ternary operator no. of `? == :` otherwise gives error
-- every colon should match just before Question mark
-- every ? followed by : not immediatly but following
+---
 
+## 2. Modulus Operator (`%`) Rules
 
-> **good program & bad program**   
-> program should work on logic not on compiler
-> increment same variable multiple times in a single line is a bad program 
+1. **Integer Types Only**: The modulus operator `%` operates exclusively on integral types (`int`, `char`, `long`). Floating-point operands (`float`, `double`) trigger compile-time errors.
+2. **Sign of Result**: In C99 and later standards, the result of `a % b` takes the **sign of the dividend (`a`)**:
+   - `7 % 3` $\rightarrow$ `1`
+   - `-7 % 3` $\rightarrow$ `-1`
+   - `7 % -3` $\rightarrow$ `1`
+   - `-7 % -3` $\rightarrow$ `-1`
+
+---
+
+## 3. Truth Values & Short-Circuit Evaluation
+
+In C:
+- Any non-zero numeric value or non-null address evaluates to **True (`1`)**.
+- `0`, `'\0'` (null character), and `NULL` evaluate to **False (`0`)**.
+
+### Short-Circuiting Behavior:
+- **Logical AND (`&&`)**: If the left-hand side operand evaluates to `0` (False), the right-hand side operand is **never executed**.
+- **Logical OR (`||`)**: If the left-hand side operand evaluates to non-zero (True), the right-hand side operand is **never executed**.
+
+---
+
+## 4. `scanf()` and `printf()` Return Values
+
+### `scanf()` Return Value
+`scanf()` returns the number of input items successfully matched and assigned.
+```c
+int a, b;
+int count = scanf("%d %d", &a, &b);
+// If user inputs "10 20", count is 2.
+// If user inputs "10 abc", count is 1.
+```
+
+### `printf()` Return Value
+`printf()` returns the total number of characters printed to stdout.
+```c
+int n = printf("GATE2026\n"); // Prints 9 characters (including '\n')
+// n will be 9.
+```
+
+---
+
+## Solved GATE Exam Practice Questions
+
+### Question 1 (GATE CS)
+What is the output of the following C program snippet?
+
+```c
+#include <stdio.h>
+int main() {
+    int x = 1, y = 0, z = 5;
+    int result = x || ++y && ++z;
+    printf("%d %d %d\n", x, y, z);
+    return 0;
+}
+```
+
+**Options:**
+- (A) `1 1 6`
+- (B) `1 0 5`
+- (C) `1 1 5`
+- (D) `1 0 6`
+
+**Correct Answer:** **(B) 1 0 5**
+
+**Explanation:**
+- In the expression `x || ++y && ++z`, `||` has lower precedence than `&&`, but `||` is evaluated left-to-right with short-circuiting behavior.
+- `x` is `1` (True). Since the left operand of `||` is True, short-circuit evaluation kicks in.
+- The right operand (`++y && ++z`) is **skipped entirely**. Thus, `y` remains `0` and `z` remains `5`.
+- Output: `1 0 5`.

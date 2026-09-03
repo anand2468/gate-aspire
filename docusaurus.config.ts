@@ -35,6 +35,14 @@ const config: Config = {
     {
       tagName: 'script',
       attributes: {
+        async: 'true',
+        src: 'https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-4584921771466880',
+        crossorigin: 'anonymous',
+      },
+    },
+    {
+      tagName: 'script',
+      attributes: {
         type: 'text/javascript',
       },
       innerHTML: `
@@ -198,7 +206,28 @@ const config: Config = {
           ],
         },
         {
-          title: 'Contribute',
+          title: 'Legal & Info',
+          items: [
+            {
+              label: 'About Us',
+              to: '/about',
+            },
+            {
+              label: 'Privacy Policy',
+              to: '/privacy-policy',
+            },
+            {
+              label: 'Terms of Service',
+              to: '/terms',
+            },
+            {
+              label: 'Contact Us',
+              to: '/contact',
+            },
+          ],
+        },
+        {
+          title: 'Community',
           items: [
             {
               label: 'GitHub',
@@ -207,7 +236,7 @@ const config: Config = {
           ],
         },
       ],
-      copyright: `Copyright © ${new Date().getFullYear()}. Made with ❤️. Built with Docusaurus.`,
+      copyright: `Copyright © ${new Date().getFullYear()} GATE Aspire. All rights reserved.`,
     },
     prism: {
       theme: prismThemes.github,
